@@ -5,20 +5,8 @@ body {
   -o-background-size: cover;
 }
 
-h1 {
-  color: #ebebeb;
-}
-
-h2 {
-  color: #ebebeb;
-}
-
-h3 {
-  color: #ebebeb;
-}
-
-h4 {
-  color: #ebebeb;
+button {
+  margin: 15px;
 }
 
 .inner{
@@ -79,18 +67,3 @@ h4 {
   color: #fff;
   border-bottom-color: #fff;
 }
-
-.label-light {
-  color: #ebebeb;
-}
-
-.text-light {
-  color: #ebebeb;
-}
-
-
-.container {
-  max-width: 960px;
-}
-
-.lh-condensed { line-height: 1.25; }

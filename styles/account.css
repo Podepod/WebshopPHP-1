@@ -6,19 +6,18 @@ body {
 }
 
 h1 {
-  color: #ebebeb;
+  margin-top: 30px;
+  margin-left: 4%;
 }
 
-h2 {
-  color: #ebebeb;
+
+button {
+  margin-left: 30%;
 }
 
-h3 {
-  color: #ebebeb;
-}
-
-h4 {
-  color: #ebebeb;
+.velden {
+  margin-top: 30px;
+  margin-left: 4%;
 }
 
 .inner{
@@ -79,18 +78,3 @@ h4 {
   color: #fff;
   border-bottom-color: #fff;
 }
-
-.label-light {
-  color: #ebebeb;
-}
-
-.text-light {
-  color: #ebebeb;
-}
-
-
-.container {
-  max-width: 960px;
-}
-
-.lh-condensed { line-height: 1.25; }
