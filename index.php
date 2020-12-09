@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <html lang="nl">
   <head>
@@ -34,6 +37,16 @@
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="#">Home</a>
         <a class="nav-link" href="products.html">Producten</a>
+        <?php if(isset($_SESSION["CustomerID"]))
+          {
+            echo('<a class="nav-link" href="sign_in.php">Login</a>')
+          }
+          else
+          {
+            echo('<a class="nav-link" href="sign_out.html">Login</a>')
+          }
+        ?>
+        <a class="nav-link" href="sign_in.php">Login</a>
       </nav>
     </div>
   </header>
