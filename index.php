@@ -36,7 +36,7 @@
       <h3 class="masthead-brand">Galactic Empire Sith Shop</h3>
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="products.html">Producten</a>
+        <a class="nav-link" href="products.php">Producten</a>
         <?php if(isset($_SESSION["CustomerID"]))
           {
             echo('<a class="nav-link" href="includes/sign_out.php">Logout</a>');

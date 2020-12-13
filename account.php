@@ -16,9 +16,9 @@
       <div class="inner">
         <h3 class="masthead-brand text-light" style="text-align:center;">Galactic Empire Sith Shop</h3>
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="products.html">Products</a>
-          <a class="nav-link" href="sign_in.php">Login</a>
+          <a class="nav-link" href="index.php">Home</a>
+          <a class="nav-link" href="products.php">Producten</a>
+          <a class="nav-link" href="includes/sign_out.php">Logout</a>
         </nav>
       </div>
     </header>
