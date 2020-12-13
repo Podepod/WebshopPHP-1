@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="nl" dir="ltr">
   <head>
@@ -19,15 +22,17 @@
         </nav>
       </div>
     </header>
-    <h1 class="text-light">Products</h1>
+    <h1 class="text-light">Orders</h1>
     <div>
       <table class="table table-hover table-dark" style="margin:30px;">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
+            <th scope="col">Customer name</th>
+            <th scope="col">Article</th>
+            <th scope="col">Price per piece</th>
             <th scope="col">Amount sold</th>
+            <th scope="col">Total</th>
           </tr>
         </thead>
         <tbody>
@@ -35,37 +40,29 @@
             <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
-            <td>@mdo</td>
+            <td>20000</td>
+            <td>5</td>
+            <td>100000</td>
           </tr>
           <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>20000</td>
+            <td>5</td>
+            <td>100000</td>
           </tr>
           <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>20000</td>
+            <td>5</td>
+            <td>100000</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <form style="max-width: 75%; margin: 30px;">
-      <div class="form-group">
-        <label for="product_name" class="text-light">Product name</label>
-        <input type="text" class="form-control" id="product_name" placeholder="Enter name">
-      </div>
-      <div class="form-group" style="max-width:10%;">
-        <label for="price" class="text-light">Price (in credits)</label>
-        <input type="number" class="form-control" id="price" placeholder="0">
-      </div>
-      <div class="form-group" style="max-width:10%;">
-        <label for="stock" class="text-light">Stock</label>
-        <input type="number" class="form-control" id="stock" placeholder="0">
-      </div>
-      <button type="submit" class="btn btn-primary">Toevoegen</button>
-    </form>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </body>
