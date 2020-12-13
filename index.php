@@ -46,7 +46,6 @@
             echo('<a class="nav-link" href="sign_in.php">Login</a>');
           }
         ?>
-        <a class="nav-link" href="sign_in.php">Login</a>
       </nav>
     </div>
   </header>
