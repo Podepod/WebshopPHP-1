@@ -39,11 +39,11 @@
         <a class="nav-link" href="products.html">Producten</a>
         <?php if(isset($_SESSION["CustomerID"]))
           {
-            echo('<a class="nav-link" href="sign_in.php">Login</a>');
+            echo('<a class="nav-link" href="includes/sign_out.php">Logout</a>');
           }
           else
           {
-            echo('<a class="nav-link" href="sign_out.html">Login</a>');
+            echo('<a class="nav-link" href="sign_in.php">Login</a>');
           }
         ?>
         <a class="nav-link" href="sign_in.php">Login</a>
