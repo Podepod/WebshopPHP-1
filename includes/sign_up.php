@@ -15,7 +15,7 @@
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql))
         {
-            header("Location: ../register.php?error=sqlerror");
+            header("Location: ../register.php?error=sqlerror1");
         }
         else
         {
@@ -33,7 +33,7 @@
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql))
                 {
-                    header("Location: ../register.php?error=sqlerror");
+                    header("Location: ../register.php?error=sqlerror2");
                 }
                 else
                 {
@@ -46,7 +46,7 @@
                     $stmt = mysqli_stmt_init($conn);
                     if(!mysqli_stmt_prepare($stmt, $sql))
                     {
-                        header("Location: ../register.php?error=sqlerror");
+                        header("Location: ../register.php?error=sqlerror3");
                     }
                     else
                     {
@@ -61,7 +61,7 @@
                             $stmt = mysqli_stmt_init($conn);
                             if(!mysqli_stmt_prepare($stmt, $sql))
                             {
-                                header("Location: ../register.php?error=sqlerror");
+                                header("Location: ../register.php?error=sqlerror4");
                             }
                             else
                             {
