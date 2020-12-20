@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="container" style="max-width:80%;">
-      <form class="needs-validation" novalidate>
+      <form action="includes/sign_up.php">
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName" class="label-light">Voornaam</label>
@@ -77,7 +77,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="username" class="label-light">e-mailadres</label>
+          <label for="email" class="label-light">e-mailadres</label>
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">@</span>
@@ -90,8 +90,16 @@
         </div>
 
         <div class="mb-3">
+          <label for="birthdate" class="label-light">Geboortedatum</label>
+          <input type="date" class="form-control" id="birthdate" required>
+          <div class="invalid-feedback">
+            Geef a.u.b. je geboortedatum in.
+          </div>
+        </div>
+
+        <div class="mb-3">
           <label for="address" class="label-light">Adres</label>
-          <input type="text" class="form-control" id="address" placeholder="Staart + nr" required>
+          <input type="text" class="form-control" id="address" placeholder="Straat + nr" required>
           <div class="invalid-feedback">
             Geef a.u.b. je adres in.
           </div>
@@ -115,6 +123,16 @@
               Je postcode is een verplicht veld.
             </div>
           </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="password" class="label-light">Wachtwoord</label>
+              <input type="password" id="password" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="passwordConfirm" class="label-light">Bevestig wachtwoord</label>
+              <input type="password" id="passwordConfirm" required>  
+            </div>
         </div>
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Registreren</button>

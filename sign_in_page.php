@@ -33,16 +33,16 @@
     <link href="styles/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" action="includes/sign_in.php">
       <img class="mb-4" src="images/GESS_logo_light.png" alt="" width="144" height="108">
       <h1 class="h3 mb-3 font-weight-normal text-light">Sign in here</h1>
-      <label for="inputEmail" class="sr-only text-light">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <button class="btn btn-outline-light btn-lg" type="submit" value="Signin">Sign in</button>
+      <label for="email" class="sr-only text-light">Email address</label>
+      <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Password" required>
+      <button class="btn btn-outline-light btn-lg" type="submit" value="Signin">Log in</button>
     </form>
-    <a href="sign_up.php">Sign Up</a>
+    <a href="sign_up_page.php">Sign Up</a>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </body>

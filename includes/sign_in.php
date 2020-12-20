@@ -49,10 +49,6 @@
       }
     }
   }
-  elseif ($_POST["submit"] == "Signup")
-  {
-    header("Location: ../sign_up.php");
-  }
   else
   {
     header("Location: ../sign_in_page.php?error=SubmitNotSet");
