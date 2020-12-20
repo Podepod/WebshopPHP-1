@@ -23,8 +23,8 @@
       </div>
     </header>
     <div style="margin: 75px; max-height: 30%;">
-        <h2>Bestellingen</h2>
-        <table class="table">
+        <h2 class="text-light">Bestellingen</h2>
+        <table class="table text-light">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -60,7 +60,7 @@
           </table>
     </div>
     <div style="margin: 75px; max-height: 30%;">
-        <h2>Producten</h2>
+        <h2 class="text-light">Producten</h2>
         <table class="table">
             <thead>
               <tr>
@@ -91,7 +91,7 @@
               </tr>
             </tbody>
         </table>
-        <h3>Product toevoegen</h3>
+        <h3 class="text-light">Product toevoegen</h3>
         <form>
             <div class="form-group">
                 <label for="productname">Productnaam</label>
@@ -113,7 +113,7 @@
         </form>
     </div>
     <div style="margin: 75px;">
-        <h3>Add an administrator</h3>
+        <h3 class="text-light">Add an administrator</h3>
         <form>
             <select class="mdb-select md-form">
                 <option value="" disabled selected>Choose a user</option>

@@ -43,7 +43,7 @@
           }
           else
           {
-            echo('<a class="nav-link" href="sign_in.php">Login</a>');
+            echo('<a class="nav-link" href="sign_in_page.php">Login</a>');
           }
         ?>
       </nav>
