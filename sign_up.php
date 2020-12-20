@@ -56,41 +56,6 @@
         <h1>Afrekening</h1>
         <h4>Hier is jouw bestelling:</h4>
       </div>
-
-  <div class="row">
-    <div class="col-md-4 order-md-2 mb-4">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">Jouw winkelkarretje</span>
-        <span class="badge badge-secondary badge-pill">3</span>
-      </h4>
-      <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Product name</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted"><img alt="AurebeshSans-Serif credit.png" src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" decoding="async" data-image-name="AurebeshSans-Serif credit.png" data-image-key="AurebeshSans-Serif_credit.png" data-src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" class=" lazyloaded" width="8" height="13">12</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Second product</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted"><img alt="AurebeshSans-Serif credit.png" src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" decoding="async" data-image-name="AurebeshSans-Serif credit.png" data-image-key="AurebeshSans-Serif_credit.png" data-src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" class=" lazyloaded" width="8" height="13">8</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Third item</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted"><img alt="AurebeshSans-Serif credit.png" src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" decoding="async" data-image-name="AurebeshSans-Serif credit.png" data-image-key="AurebeshSans-Serif_credit.png" data-src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" class=" lazyloaded" width="8" height="13">5</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Total (Credits)</span>
-          <strong><img alt="AurebeshSans-Serif credit.png" src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" decoding="async" data-image-name="AurebeshSans-Serif credit.png" data-image-key="AurebeshSans-Serif_credit.png" data-src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" class=" lazyloaded" width="8" height="13">20</strong>
-        </li>
-      </ul>
-
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Factuur adres</h4>

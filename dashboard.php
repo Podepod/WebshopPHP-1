@@ -22,11 +22,106 @@
         </nav>
       </div>
     </header>
-    <div class="d-flex justify-content-center">
-      <div class="btn-group-vertical">
-        <button type="button" name="button" class="btn btn-primary" style="margin-top:50%;">Bekijk bestellingen</button>
-        <button type="button" name="button" class="btn btn-primary">Bekijk producten</button>
-      </div>
+    <div style="margin: 75px; max-height: 30%;">
+        <h2>Bestellingen</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Orderdate</th>
+                <th scope="col">Total price</th>
+                <th scope="col">Payed? Y/N</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>14-01-2020</td>
+                <td>€1250</td>
+                <td>N</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>14-01-2020</td>
+                <td>€1250</td>
+                <td>N</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>14-01-2020</td>
+                <td>€1250</td>
+                <td>N</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div style="margin: 75px; max-height: 30%;">
+        <h2>Producten</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product</th>
+                <th scope="col">In stock</th>
+                <th scope="col">Prijs per stuk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Cola</td>
+                <td>12</td>
+                <td>€1250</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Cola</td>
+                <td>12</td>
+                <td>€1250</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Cola</td>
+                <td>12</td>
+                <td>€1250</td>
+              </tr>
+            </tbody>
+        </table>
+        <h3>Product toevoegen</h3>
+        <form>
+            <div class="form-group">
+                <label for="productname">Productnaam</label>
+                <input class="form-control" id="productname" placeholder="Enter productname">
+            </div>
+            <div class="form-group">
+                <label for="stock">In Stock</label>
+                <input type="number" step="1" id="stock">
+            </div>
+            <div class="form-group">
+                <label for="priceperpiece">Price per piece</label>
+                <input type="number" step=".01" id="priceperpiece">
+            </div>
+            <div class="form-group">
+                <label for="image">Productafbeelding naam</label>
+                <input class="form-control" id="image" placeholder="Enter imagename">
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+    <div style="margin: 75px;">
+        <h3>Add an administrator</h3>
+        <form>
+            <select class="mdb-select md-form">
+                <option value="" disabled selected>Choose a user</option>
+                <option value="1">Bart Simons</option>
+                <option value="2">Bart Simons</option>
+                <option value="3">Bart Simons</option>
+            </select>
+        </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
