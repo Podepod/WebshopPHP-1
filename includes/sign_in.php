@@ -1,5 +1,5 @@
 <?php
-  if($_POST["submit"] == "Signin")
+  if(isset($_POST["submit"]))
   {
     require "config.php";
     $mail = $_POST['email'];
@@ -51,7 +51,6 @@
   }
   else
   {
-    echo($_POST["submit"]);
-    //header("Location: ../sign_in_page.php?error=SubmitNotSet");
+    header("Location: ../sign_in_page.php?error=SubmitNotSet");
   }
 ?>
