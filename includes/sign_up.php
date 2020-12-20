@@ -11,7 +11,7 @@
         $postcode = $_POST['postcode'];
         $pwd = $_POST['password'];
 
-        $sql = "SELECT * FROM Customers WHERE email=?;";
+        $sql = "SELECT * FROM Customers WHERE email_address=?;";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql))
         {
@@ -42,7 +42,7 @@
                     mysqli_stmt_execute($stmt);
 
                     //Add address to the address table
-                    $sql = "SELECT CustomerID FROM Customers WHERE email=?;";
+                    $sql = "SELECT CustomerID FROM Customers WHERE email_address?;";
                     $stmt = mysqli_stmt_init($conn);
                     if(!mysqli_stmt_prepare($stmt, $sql))
                     {
