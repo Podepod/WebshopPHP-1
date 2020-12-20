@@ -61,7 +61,7 @@
     </div>
     <div style="margin: 75px; max-height: 30%;">
         <h2 class="text-light">Producten</h2>
-        <table class="table">
+        <table class="table text-light">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -92,7 +92,7 @@
             </tbody>
         </table>
         <h3 class="text-light">Product toevoegen</h3>
-        <form>
+        <form class=" text-light">
             <div class="form-group">
                 <label for="productname">Productnaam</label>
                 <input class="form-control" id="productname" placeholder="Enter productname">
