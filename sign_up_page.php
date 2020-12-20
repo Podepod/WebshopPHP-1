@@ -137,6 +137,8 @@
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Registreren</button>
       </form>
+      <p>Nog geen account?</p>
+      <a href="sign_up_page.php">Registreer je hier</a>
     </div>
   </div>
   <footer class="my-5 pt-5 text-muted text-center text-small">
