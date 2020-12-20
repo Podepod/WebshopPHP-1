@@ -135,7 +135,7 @@
             </div>
         </div>
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Registreren</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" id="signup-submit">Registreren</button>
       </form>
     </div>
   </div>
