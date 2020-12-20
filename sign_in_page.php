@@ -42,7 +42,9 @@
       <input type="password" id="password" class="form-control" placeholder="Password" required>
       <button class="btn btn-outline-light btn-lg" type="submit" value="Signin">Log in</button>
     </form>
-    <a href="sign_up_page.php">Sign Up</a>
+    <div class="d-flex justify-content-center"> 
+      <a href="sign_up_page.php" class="btn btn-primary stretched-link">Registreer je hier</a>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </body>
