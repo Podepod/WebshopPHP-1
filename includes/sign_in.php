@@ -1,5 +1,5 @@
 <?php
-  if(isset($_POST["submit"]))
+  if(isset($_POST["signin"]))
   {
     require "config.php";
     $mail = $_POST['email'];

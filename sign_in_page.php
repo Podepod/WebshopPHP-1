@@ -40,7 +40,7 @@
       <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
       <label for="password" class="sr-only">Password</label>
       <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-      <button class="btn btn-outline-light btn-lg" type="submit" id="Signin" name="Signin">Log in</button>
+      <button class="btn btn-outline-light btn-lg" type="submit" id="signin" name="signin">Log in</button>
     </form>
     <!--<div class="d-flex justify-content-center"> 
       <a href="sign_up_page.php" class="btn btn-primary stretched-link">Registreer je hier</a>
