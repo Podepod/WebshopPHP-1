@@ -42,7 +42,7 @@
                     mysqli_stmt_execute($stmt);
 
                     //Add address to the address table
-                    $sql = "SELECT CustomerID FROM Customers WHERE email_address?;";
+                    $sql = "SELECT CustomerID FROM Customers WHERE email_address=?;";
                     $stmt = mysqli_stmt_init($conn);
                     if(!mysqli_stmt_prepare($stmt, $sql))
                     {
