@@ -53,12 +53,11 @@
     <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="images/GESS_logo_light.png" alt="logo" width="144" height="108">
-        <h1>Afrekening</h1>
-        <h4>Hier is jouw bestelling:</h4>
+        <h1>Registreren</h1>
+        <h4>Registreer je hier:</h4>
       </div>
     </div>
-    <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">Factuur adres</h4>
+    <div class="container" style="max-width:80%;">
       <form class="needs-validation" novalidate>
         <div class="row">
           <div class="col-md-6 mb-3">
@@ -83,7 +82,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text">@</span>
             </div>
-            <input type="email" class="form-control" id="username" placeholder="Email" required>
+            <input type="email" class="form-control" id="email" placeholder="E-mail" required>
             <div class="invalid-feedback" style="width: 100%;">
               Je e-mailadres is een verplicht veld.
             </div>
@@ -96,11 +95,6 @@
           <div class="invalid-feedback">
             Geef a.u.b. je adres in.
           </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="address2" class="label-light">Adres 2 <span class="text-muted">(Optioneel)</span></label>
-          <input type="text" class="form-control" id="address2" placeholder="Appartment of suite">
         </div>
 
         <div class="row">
@@ -123,56 +117,7 @@
           </div>
         </div>
         <hr class="mb-4">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="same-address">
-          <label class="custom-control-label" style="color: #ebebeb;" for="same-address">Zending adres is hetzelfde als mijn factuur adres</label>
-        </div>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="save-info">
-          <label class="custom-control-label" style="color: #ebebeb;" for="save-info">Sla op voor de volgende keer</label>
-        </div>
-        <hr class="mb-4">
-
-        <h4 class="mb-3">Betaling</h4>
-
-        <div class="d-block my-3">
-          <div class="custom-control custom-radio">
-            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-            <label class="custom-control-label" style="color: #ebebeb;" for="credit">Credits card</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-            <label class="custom-control-label" style="color: #ebebeb;" for="paypal">Your life</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="cc-name" class="label-light">Naam op de kaart</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="" required>
-            <small class="text-muted">Volledige naam zoals op de kaart</small>
-            <div class="invalid-feedback">
-              De naam op de kaart is een verplicht veld.
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="cc-number" class="label-light">Credits card nummer</label>
-            <input type="text" class="form-control" id="cc-number" placeholder="" required>
-            <div class="invalid-feedback">
-              Het credits card nummer is een verplicht veld.
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <label for="cc-expiration" class="label-light">Vervaldatum</label>
-            <input type="date" class="form-control" id="cc-expiration" placeholder="" required>
-            <div class="invalid-feedback">
-              De vervaldatum is een verplicht veld.
-            </div>
-          </div>
-        </div>
-        <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Ga verder naar betalen</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Registreren</button>
       </form>
     </div>
   </div>

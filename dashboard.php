@@ -113,14 +113,27 @@
         </form>
     </div>
     <div style="margin: 75px;">
-        <h3 class="text-light">Add an administrator</h3>
+        <h3 class="text-light">Administrator toevoegen</h3>
         <form>
             <select class="mdb-select md-form">
-                <option value="" disabled selected>Choose a user</option>
+                <option value="" disabled selected>Kies een gebruiker</option>
                 <option value="1">Bart Simons</option>
                 <option value="2">Bart Simons</option>
                 <option value="3">Bart Simons</option>
             </select>
+            <button type="submit" class="btn btn-primary">Toevoegen</button>
+        </form>
+    </div>
+    <div style="margin: 75px;">
+        <h3 class="text-light">Administrator verwijderen</h3>
+        <form>
+            <select class="mdb-select md-form">
+                <option value="" disabled selected>Kies een gebruiker</option>
+                <option value="1">Bart Simons</option>
+                <option value="2">Bart Simons</option>
+                <option value="3">Bart Simons</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Verwijderen</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
