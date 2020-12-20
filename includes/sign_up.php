@@ -52,7 +52,6 @@
                     {
                         mysqli_stmt_bind_param($stmt, "s", $email);
                         mysqli_stmt_execute($stmt);
-                        mysqli_stmt_store_result($stmt);
                         $result = mysqli_stmt_get_result($stmt);
                         if($row = mysqli_fetch_assoc($result))
                         {
@@ -65,7 +64,7 @@
                             }
                             else
                             {
-                                mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $email, $birthdate, $passwordHashed);
+                                mysqli_stmt_bind_param($stmt, "sssss", $country, $city, $address, $postcode, $CID);
                                 mysqli_stmt_execute($stmt);
                                 header("Location: ../index.php");
                             }

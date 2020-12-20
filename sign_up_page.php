@@ -105,6 +105,14 @@
           </div>
         </div>
 
+        <div class="mb-3">
+          <label for="city" class="label-light">Stad</label>
+          <input type="text" class="form-control" name="city" id="city" placeholder="Stad" required>
+          <div class="invalid-feedback">
+            Geef a.u.b. je stad in.
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-md-5 mb-3">
             <label for="country" class="label-light">Land</label>
