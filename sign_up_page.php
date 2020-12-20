@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="container" style="max-width:80%;">
-      <form action="includes/sign_up.php">
+      <form action="includes/sign_up.php" method="POST">
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName" class="label-light">Voornaam</label>

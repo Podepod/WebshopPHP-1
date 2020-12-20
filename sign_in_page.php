@@ -33,14 +33,14 @@
     <link href="styles/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin" action="includes/sign_in.php">
+    <form class="form-signin" action="includes/sign_in.php" method="POST">
       <img class="mb-4" src="images/GESS_logo_light.png" alt="" width="144" height="108">
       <h1 class="h3 mb-3 font-weight-normal text-light">Sign in here</h1>
       <label for="email" class="sr-only text-light">Email address</label>
       <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
       <label for="password" class="sr-only">Password</label>
       <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-      <button class="btn btn-outline-light btn-lg" type="submit" name="Signin">Log in</button>
+      <button class="btn btn-outline-light btn-lg" type="submit" id="Signin" name="Signin">Log in</button>
     </form>
     <div class="d-flex justify-content-center"> 
       <a href="sign_up_page.php" class="btn btn-primary stretched-link">Registreer je hier</a>
