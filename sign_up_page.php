@@ -62,14 +62,14 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName" class="label-light">Voornaam</label>
-            <input type="text" class="form-control" id="firstName" placeholder="voornaam" value="" required>
+            <input type="text" class="form-control" name="firstname" id="firstName" placeholder="voornaam" value="" required>
             <div class="invalid-feedback">
               Je voornaam is een verplicht veld.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName" class="label-light">Achternaam</label>
-            <input type="text" class="form-control" id="lastName" placeholder="achternaam" value="" required>
+            <input type="text" class="form-control" name="lastname" id="lastName" placeholder="achternaam" value="" required>
             <div class="invalid-feedback">
               Je achternaam is een verplicht veld.
             </div>
@@ -82,7 +82,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text">@</span>
             </div>
-            <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+            <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
             <div class="invalid-feedback" style="width: 100%;">
               Je e-mailadres is een verplicht veld.
             </div>
@@ -91,7 +91,7 @@
 
         <div class="mb-3">
           <label for="birthdate" class="label-light">Geboortedatum</label>
-          <input type="date" class="form-control" id="birthdate" required>
+          <input type="date" class="form-control" name="birthdate" id="birthdate" required>
           <div class="invalid-feedback">
             Geef a.u.b. je geboortedatum in.
           </div>
@@ -99,7 +99,7 @@
 
         <div class="mb-3">
           <label for="address" class="label-light">Adres</label>
-          <input type="text" class="form-control" id="address" placeholder="Straat + nr" required>
+          <input type="text" class="form-control" name="address" id="address" placeholder="Straat + nr" required>
           <div class="invalid-feedback">
             Geef a.u.b. je adres in.
           </div>
@@ -108,7 +108,7 @@
         <div class="row">
           <div class="col-md-5 mb-3">
             <label for="country" class="label-light">Land</label>
-            <select class="custom-select d-block w-100" id="country" required>
+            <select class="custom-select d-block w-100" id="country" name="country" required>
               <option value="">Kies...</option>
               <option>België</option>
             </select>
@@ -118,7 +118,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="postcode" class="label-light">Postcode</label>
-            <input type="text" class="form-control" id="postcode" placeholder="" required>
+            <input type="text" class="form-control" id="postcode" name="postcode" placeholder="" required>
             <div class="invalid-feedback">
               Je postcode is een verplicht veld.
             </div>
@@ -127,15 +127,15 @@
         <div class="row">
             <div class="col-md-5 mb-3">
               <label for="password" class="label-light">Wachtwoord</label>
-              <input type="password" id="password" required>
+              <input type="password" id="password" name="password" required>
             </div>
             <div class="col-md-3 mb-3">
               <label for="passwordConfirm" class="label-light">Bevestig wachtwoord</label>
-              <input type="password" id="passwordConfirm" required>  
+              <input type="password" id="passwordConfirm" name="passwordConfirm" required>  
             </div>
         </div>
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit" id="signup-submit">Registreren</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" id="signup-submit" name="signup-button">Registreren</button>
       </form>
     </div>
   </div>
