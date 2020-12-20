@@ -51,6 +51,7 @@
   }
   else
   {
-    header("Location: ../sign_in_page.php?error=SubmitNotSet");
+    echo($_POST["submit"]);
+    //header("Location: ../sign_in_page.php?error=SubmitNotSet");
   }
 ?>
