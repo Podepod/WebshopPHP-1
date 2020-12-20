@@ -6,7 +6,7 @@
     $password = $_POST['password'];
     if(empty($mail) || empty($password))
     {
-      header("Location: ../sign_in.php?error=NogEnoughData");
+      header("Location: ../sign_in_page.php?error=NogEnoughData");
     }
     else
     {
@@ -14,7 +14,7 @@
       $stmt = mysqli_stmt_init($conn);
       if(!mysqli_stmt_prepare($stmt, $sql))
       {
-        header("Location: ../sign_in.php?error=SQL_error1");
+        header("Location: ../sign_in_page.php?error=SQL_error1");
       }
       else
       {
@@ -26,7 +26,7 @@
           $pwdCheck = password_verify($password, $row['password']);
           if($pwdCheck == false)
           {
-            header("Location: ../sign_in.php?error=wrongpassword");
+            header("Location: ../sign_in_page.php?error=wrongpassword");
           }
           else if ($pwdCheck == true)
           {
@@ -34,16 +34,17 @@
             $_SESSION['email'] = $row['email_address'];
             $_SESSION['naam'] = $row['voornaam'];
             $_SESSION['CustomerID'] = $row['CustomerID'];
+            $_SESSION['Admin'] = $row['admin'];
             header("Location: ../index.php");
           }
           else
           {
-            header("Location: ../sign_in.php?error=pwdisnopwd");
+            header("Location: ../sign_in_page.php?error=pwdisnopwd");
           }
         }
         else
         {
-          header("Location: ../sign_in.php?error=nouser");
+          header("Location: ../sign_in_page.php?error=nouser");
         }
       }
     }
@@ -54,6 +55,6 @@
   }
   else
   {
-    header("Location: ../sign_in.php?error=SubmitNotSet");
+    header("Location: ../sign_in_page.php?error=SubmitNotSet");
   }
 ?>
