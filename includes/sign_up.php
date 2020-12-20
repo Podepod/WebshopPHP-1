@@ -7,6 +7,7 @@
         $email = $_POST['email'];
         $birthdate = $_POST['birthdate'];
         $address = $_POST['address'];
+        $city = $_POST['city'];
         $country = $_POST['country'];
         $postcode = $_POST['postcode'];
         $pwd = $_POST['password'];
