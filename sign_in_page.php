@@ -46,8 +46,8 @@
     </form>
     </div>
     <div class="row">
-      <div class="d-flex justify-content-center"> 
-        <a href="sign_up_page.php" class="btn btn-primary stretched-link">Registreer je hier</a>
+      <div class="col align-self-center"> 
+        <a href="sign_up_page.php" class="btn btn-outline-light btn-lg">Registreer je hier</a>
       </div>
     </div>
   </div>
