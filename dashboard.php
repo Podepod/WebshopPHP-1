@@ -96,7 +96,7 @@
             </tbody>
         </table>
         <h3 class="text-light">Product toevoegen</h3>
-        <form class=" text-light" action="includes/add_product.php">
+        <form class=" text-light" action="includes/add_product.php" method="POST">
             <div class="form-group">
                 <label for="productname">Productnaam</label>
                 <input class="form-control" id="productname" name="name" placeholder="Enter productname">
@@ -114,12 +114,12 @@
                 <input class="form-control" name="image" id="image" placeholder="Enter imagename">
             </div>
             <button type="submit" class="btn btn-primary" name="submit-product">Add</button>sander
-            
+
         </form>
     </div>
     <div style="margin: 75px;">
         <h3 class="text-light">Administrator toevoegen</h3>
-        <form>
+        <form method="POST">
             <select class="mdb-select md-form">
                 <option value="" disabled selected>Kies een gebruiker</option>
                 <option value="1">Bart Simons</option>
@@ -131,7 +131,7 @@
     </div>
     <div style="margin: 75px;">
         <h3 class="text-light">Administrator verwijderen</h3>
-        <form>
+        <form method="POST">
             <select class="mdb-select md-form">
                 <option value="" disabled selected>Kies een gebruiker</option>
                 <option value="1">Bart Simons</option>
