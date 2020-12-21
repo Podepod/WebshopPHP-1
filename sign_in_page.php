@@ -33,9 +33,9 @@
     <link href="styles/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <img class="mb-4" src="images/GESS_logo_light.png" alt="" width="144" height="108">
-    <h1 class="h3 mb-3 font-weight-normal text-light">Sign in here</h1>
     <form class="form-signin" action="includes/sign_in.php" method="POST">
+      <img class="mb-4" src="images/GESS_logo_light.png" alt="" width="144" height="108">
+      <h1 class="h3 mb-3 font-weight-normal text-light">Sign in here</h1>
       <label for="email" class="sr-only text-light">Email address</label>
       <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
       <label for="password" class="sr-only">Password</label>
