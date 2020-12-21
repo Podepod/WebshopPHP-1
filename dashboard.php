@@ -93,10 +93,10 @@
                         }
                         else
                         {
-                          $som += 1001;
+                          $som += 0;
                         }
                       }
-                    }
+                    }²    
                     else
                     {
                       $som = "Unknown";
@@ -105,26 +105,12 @@
                     echo('<th scope="row">' . $OrderID . '</th>');
                     echo('<td>' . $CustomerName . '</td>');
                     echo('<td>' . $OrderTime . '</td>');
-                    echo('<td>' . $som . '</td>');
+                    echo('<td>€' . $som . '</td>');
                     echo('<td>' . $payed . '</td>');
                     echo('</tr>');
                   }
                 }
               ?>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>14-01-2020</td>
-                <td>€1250</td>
-                <td>N</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>14-01-2020</td>
-                <td>€1250</td>
-                <td>N</td>
-              </tr>
             </tbody>
           </table>
     </div>
@@ -204,6 +190,7 @@
         <h3 class="text-light">Administrator toevoegen</h3>
         <form method="POST">
             <select class="mdb-select md-form" name="user">
+            <option value="" disabled selected>Kies een gebruiker</option>
               <?php
                     $sql = "SELECT CustomerID, first_name, last_name FROM Customers WHERE admin = 0 ORDER BY first_name, last_name, CustomerID;";
                     $result = mysqli_query($conn, $sql);
@@ -212,7 +199,7 @@
                     {
                       while($row = mysqli_fetch_assoc($result))
                       {
-                        echo('<option value="' . $row['CustomerID'] . '>' .$row['first_name'] . ' ' . $row['last_name'] . '</option>');
+                        echo('<option value="' . $row['CustomerID'] . '">' .$row['first_name'] . ' ' . $row['last_name'] . '</option>');
                       }
                     }
                   ?>
@@ -233,7 +220,7 @@
                   {
                     while($row = mysqli_fetch_assoc($result))
                     {
-                      echo('<option value="' . $row['CustomerID'] . '>' .$row['first_name'] . ' ' . $row['last_name'] . '</option>');
+                      echo('<option value="' . $row['CustomerID'] . '">' .$row['first_name'] . ' ' . $row['last_name'] . '</option>');
                     }
                   }
                 ?>
