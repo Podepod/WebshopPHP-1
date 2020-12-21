@@ -135,11 +135,11 @@
         <div class="row">
             <div class="col-md-5 mb-3">
               <label for="password" class="label-light">Wachtwoord</label>
-              <input type="password" id="password" name="password" required>
+              <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="col-md-3 mb-3">
               <label for="passwordConfirm" class="label-light">Bevestig wachtwoord</label>
-              <input type="password" id="passwordConfirm" name="passwordConfirm" required>  
+              <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" required>  
             </div>
         </div>
         <hr class="mb-4">
