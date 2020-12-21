@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require "includes/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -35,13 +36,81 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>14-01-2020</td>
-                <td>€1250</td>
-                <td>N</td>
-              </tr>
+              <?php
+                $sql = "SELECT * FROM Orders;";
+                $result = mysqli_query($conn, $sql);
+                $resultCheck = mysqli_num_rows($result);
+                if($resultCheck > 0)
+                {
+                  while($row = mysqli_fetch_assoc($result))
+                  {
+                    $OrderID = $row['OrderID'];
+                    $OrderTime = $row['order_time'];
+                    $payed = $row['payed'];
+                    $CustomerID = $row['CustomerID'];
+                    $som = 0;
+
+                    if($payed == 1)
+                    {
+                      $payed = 'Y';
+                    }
+                    else
+                    {
+                      $payed = 'N';                    
+                    }
+
+                    $sql = "SELECT CONCAT(first_name, ' ', last_name) AS Name FROM Customers WHERE CustomerID = " . $CustomerID . ";";
+                    $result2 = mysqli_query($conn, $sql);
+                    $resultCheck2 = mysqli_num_rows($result2);
+                    if($resultCheck2 > 0)
+                    {
+                      $row2 = mysqli_fetch_assoc($result2);
+                      $CustomerName = $row2['Name'];
+                    }
+                    else
+                    {
+                      $CustomerName = "Unknown";
+                    }
+
+                    $sql = "SELECT ProductID, amount FROM Order_details WHERE OrderID = " . $OrderID . ";";
+                    $result3 = mysqli_query($conn, $sql);
+                    $resultCheck3 = mysqli_num_rows($result3);
+                    if($resultCheck3 > 0)
+                    {
+                      while($row3 = mysqli_fetch_assoc($result3))
+                      {
+                        $ProductID = $row3['ProductID'];
+                        $amount = $row3['amount'];
+
+                        $sql = "SELECT price FROM Products WHERE ProductID = " . $ProductID . ";";
+                        $result4 = mysqli_query($conn, $sql);
+                        $resultCheck4 = mysqli_num_rows($result4);
+                        if($resultCheck4 > 0)
+                        {
+                          $row4 = mysqli_fetch_assoc($result4);
+                          $price = $row['price'];
+                          $som += ($price * $amount);
+                        }
+                        else
+                        {
+                          $som += 0;
+                        }
+                      }
+                    }
+                    else
+                    {
+                      $price = "Unknown";
+                    }
+                    echo('<tr>');
+                    echo('<th scope="row">' . $OrderID . '</th>');
+                    echo('<td>' . $CustomerName . '</td>');
+                    echo('<td>' . $OrderTime . '</td>');
+                    echo('<td>' . $price . '</td>');
+                    echo('<td>' . $payed . '</td>');
+                    echo('</tr>');
+                  }
+                }
+              ?>
               <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
@@ -72,7 +141,6 @@
             </thead>
             <tbody>
             <?php
-              require "includes/config.php";
               $sql = "SELECT * FROM Products;";
               $result = mysqli_query($conn, $sql);
               $resultCheck = mysqli_num_rows($result);
@@ -113,27 +181,64 @@
         </form>
     </div>
     <div style="margin: 75px;">
+        <h3 class="text-light">Product verwijderen</h3>
+        <form method="POST" action="includes/remove_product.php">
+            <select class="mdb-select md-form" name="product">
+              <?php
+                    $sql = "SELECT ProductID, name FROM Products ORDER BY name, ProductID;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    if($resultCheck > 0)
+                    {
+                      while($row = mysqli_fetch_assoc($result))
+                      {
+                        echo('<option value="' . $row['ProductID'] . '>' .$row['name'] . '</option>');
+                      }
+                    }
+                  ?>
+            </select>
+            <button type="submit" class="btn btn-primary" name="submit-add-admin">Toevoegen</button>
+        </form>
+    </div>
+    <div style="margin: 75px;">
         <h3 class="text-light">Administrator toevoegen</h3>
         <form method="POST">
-            <select class="mdb-select md-form">
-                <option value="" disabled selected>Kies een gebruiker</option>
-                <option value="1">Bart Simons</option>
-                <option value="2">Bart Simons</option>
-                <option value="3">Bart Simons</option>
+            <select class="mdb-select md-form" name="user">
+              <?php
+                    $sql = "SELECT CustomerID, first_name, last_name FROM Customers WHERE admin = 0 ORDER BY first_name, last_name, CustomerID;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    if($resultCheck > 0)
+                    {
+                      while($row = mysqli_fetch_assoc($result))
+                      {
+                        echo('<option value="' . $row['CustomerID'] . '>' .$row['first_name'] . ' ' . $row['last_name'] . '</option>');
+                      }
+                    }
+                  ?>
             </select>
-            <button type="submit" class="btn btn-primary">Toevoegen</button>
+            <button type="submit" class="btn btn-primary" name="submit-add-admin">Toevoegen</button>
         </form>
     </div>
     <div style="margin: 75px;">
         <h3 class="text-light">Administrator verwijderen</h3>
-        <form method="POST">
-            <select class="mdb-select md-form">
+        <form action="includes/remove_admin.php" method="POST">
+            <select class="mdb-select md-form" name="user">
                 <option value="" disabled selected>Kies een gebruiker</option>
-                <option value="1">Bart Simons</option>
-                <option value="2">Bart Simons</option>
-                <option value="3">Bart Simons</option>
+                <?php
+                  $sql = "SELECT CustomerID, first_name, last_name FROM Customers WHERE admin = 1 ORDER BY first_name, last_name, CustomerID;";
+                  $result = mysqli_query($conn, $sql);
+                  $resultCheck = mysqli_num_rows($result);
+                  if($resultCheck > 0)
+                  {
+                    while($row = mysqli_fetch_assoc($result))
+                    {
+                      echo('<option value="' . $row['CustomerID'] . '>' .$row['first_name'] . ' ' . $row['last_name'] . '</option>');
+                    }
+                  }
+                ?>
             </select>
-            <button type="submit" class="btn btn-primary">Verwijderen</button>
+            <button type="submit" class="btn btn-primary" name="submit-remove-admin">Verwijderen</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
