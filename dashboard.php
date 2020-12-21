@@ -2,7 +2,7 @@
   session_start();
 ?>
 <!DOCTYPE html>
-<html lang="nl" dir="ltr">
+<html lang="nl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -74,15 +74,11 @@
             <?php
               require "includes/config.php";
               $sql = "SELECT * FROM Products;";
-              $stmt = mysqli_stmt_init($conn);
-              if(!mysqli_stmt_prepare($stmt, $sql))
+              $result = mysqli_query($conn, $sql);
+              $resultCheck = mysqli_num_rows($result);
+              if($resultCheck > 0)
               {
-                header("Location: ../sign_in_page.php?error=SQL_error1");
-              }
-              else
-              {
-                mysqli_stmt_execute($stmt);
-                while($row = mysqli_fetch_assoc($stmt))
+                while($row = mysqli_fetch_assoc($result))
                 {
                   echo('<tr>');
                   echo('<th scope="row">' . $row['ProductID'] . '</th>');
