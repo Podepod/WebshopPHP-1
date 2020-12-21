@@ -16,9 +16,9 @@
             }
             else
             {
-                mysqli_stmt_bind_param($stmt, "sssss", $name, $stock, $price, $image);
+                mysqli_stmt_bind_param($stmt, "ssss", $name, $stock, $price, $image);
                 mysqli_stmt_execute($stmt);
-                header("Location: ../dashboard.php?success");
+                header("Location: ../dashboard.php?successWithImage");
             }
         }
         else
@@ -31,7 +31,7 @@
             }
             else
             {
-                mysqli_stmt_bind_param($stmt, "sssss", $name, $stock, $price);
+                mysqli_stmt_bind_param($stmt, "sss", $name, $stock, $price);
                 mysqli_stmt_execute($stmt);
                 header("Location: ../dashboard.php?success");
             }
