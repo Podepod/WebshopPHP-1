@@ -99,13 +99,13 @@
                     }
                     else
                     {
-                      $price = "Unknown";
+                      $som = "Unknown";
                     }
                     echo('<tr>');
                     echo('<th scope="row">' . $OrderID . '</th>');
                     echo('<td>' . $CustomerName . '</td>');
                     echo('<td>' . $OrderTime . '</td>');
-                    echo('<td>' . $price . '</td>');
+                    echo('<td>' . $som . '</td>');
                     echo('<td>' . $payed . '</td>');
                     echo('</tr>');
                   }
