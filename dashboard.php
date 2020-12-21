@@ -111,10 +111,9 @@
             </div>
             <div class="form-group">
                 <label for="image">Productafbeelding naam</label>
-                <input class="form-control" name="image" id="image" placeholder="Enter imagename">
+                <input class="form-control" name="image" id="image" placeholder="Enter image path">
             </div>
-            <button type="submit" class="btn btn-primary" name="submit-product">Add</button>sander
-
+            <button type="submit" class="btn btn-primary" name="submit-product">Add</button>
         </form>
     </div>
     <div style="margin: 75px;">
