@@ -138,7 +138,7 @@
                   echo('<th scope="row">' . $row['ProductID'] . '</th>');
                   echo('<td>' . $row['name'] . '</td>');
                   echo('<td>' . $row['stock'] . '</td>');
-                  echo('<td>' . $row['price'] . '</td>');
+                  echo('<td>€' . $row['price'] . '</td>');
                   echo('</tr>');
                 }
               }
@@ -189,7 +189,7 @@
     </div>
     <div style="margin: 75px;">
         <h3 class="text-light">Administrator toevoegen</h3>
-        <form method="POST">
+        <form method="POST" action="includes/add_admin.php">
             <select class="mdb-select md-form" name="user">
             <option value="" disabled selected>Kies een gebruiker</option>
               <?php
