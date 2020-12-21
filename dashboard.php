@@ -184,7 +184,7 @@
                     }
                   ?>
             </select>
-            <button type="submit" class="btn btn-primary" name="submit-add-admin">Toevoegen</button>
+            <button type="submit" class="btn btn-primary" name="submit-remove-product">Verwijderen</button>
         </form>
     </div>
     <div style="margin: 75px;">

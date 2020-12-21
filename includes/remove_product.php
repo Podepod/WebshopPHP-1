@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST['submit-remove-admin']))
+    if(isset($_POST['submit-remove-product']))
     {
         require "config.php";
         $productID = $_POST['product'];
