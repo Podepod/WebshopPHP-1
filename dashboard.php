@@ -96,7 +96,7 @@
                           $som += 0;
                         }
                       }
-                    }²    
+                    }    
                     else
                     {
                       $som = "Unknown";
@@ -170,6 +170,7 @@
         <h3 class="text-light">Product verwijderen</h3>
         <form method="POST" action="includes/remove_product.php">
             <select class="mdb-select md-form" name="product">
+            <option value="" disabled selected>Kies een product</option>
               <?php
                     $sql = "SELECT ProductID, name FROM Products ORDER BY name, ProductID;";
                     $result = mysqli_query($conn, $sql);
@@ -178,7 +179,7 @@
                     {
                       while($row = mysqli_fetch_assoc($result))
                       {
-                        echo('<option value="' . $row['ProductID'] . '>' .$row['name'] . '</option>');
+                        echo('<option value="' . $row['ProductID'] . '">' .$row['name'] . '</option>');
                       }
                     }
                   ?>
