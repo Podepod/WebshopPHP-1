@@ -32,7 +32,8 @@
           {
             session_start();
             $_SESSION['email'] = $row['email_address'];
-            $_SESSION['naam'] = $row['voornaam'];
+            $_SESSION['voornaam'] = $row['first_name'];
+            $_SESSION['achternaam'] = $row['last_name'];
             $_SESSION['CustomerID'] = $row['CustomerID'];
             $_SESSION['Admin'] = $row['admin'];
             header("Location: ../index.php");

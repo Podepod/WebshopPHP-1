@@ -37,9 +37,14 @@
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="#">Home</a>
         <a class="nav-link" href="products.php">Producten</a>
-        <?php if(isset($_SESSION["CustomerID"]))
+        <?php
+          if(isset($_SESSION["CustomerID"]))
           {
             echo('<a class="nav-link" href="includes/sign_out.php">Logout</a>');
+            if($_SESSION["Admin"] == 1)
+            {
+              echo('<a class="nav-link" href="dashboard.php">Dashboard</a>');
+            }
           }
           else
           {
@@ -50,7 +55,23 @@
     </div>
   </header>
   <main role="main" class="inner cover">
-    <h1 class="cover-heading" style="margin-top:40px;">Join the dark side,</br> we have cookies...</h1>
+    <?php
+      if(isset($_SESSION["CustomerID"]))
+      {
+        if($_SESSION["Admin"] == 1)
+        {
+          echo('<h1 class="cover-heading" style="margin-top:40px;">Welcome supremeleader</br>'.$_SESSION['voornaam']);
+        }
+        else
+        {
+          echo('<h1 class="cover-heading" style="margin-top:40px;">Welkom terug</br>'.$_SESSION['voornaam']);
+        }
+      }
+      else
+      {
+        echo('<h1 class="cover-heading" style="margin-top:40px;">Join the dark side,</br>we have cookies...');
+      }
+    ?>
     <p class="lead">The Galactic Empire Sith Shop is DE plaats waar je alles dat je nodig hebt om te heersen over het universum in naam van The Galactic Empire. </p>
     <p class="lead">
       <a href="products.html" class="btn btn-lg btn-secondary">Start shopping</a>

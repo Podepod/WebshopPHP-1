@@ -71,45 +71,50 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Cola</td>
-                <td>12</td>
-                <td>€1250</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Cola</td>
-                <td>12</td>
-                <td>€1250</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Cola</td>
-                <td>12</td>
-                <td>€1250</td>
-              </tr>
+            <?php
+              require "includes/config.php";
+              $sql = "SELECT * FROM Products;";
+              $stmt = mysqli_stmt_init($conn);
+              if(!mysqli_stmt_prepare($stmt, $sql))
+              {
+                header("Location: ../sign_in_page.php?error=SQL_error1");
+              }
+              else
+              {
+                mysqli_stmt_execute($stmt);
+                while($row = mysqli_fetch_assoc($stmt))
+                {
+                  echo('<tr>');
+                  echo('<th scope="row">' . $row['ProductID'] . '</th>');
+                  echo('<td>' . $row['name'] . '</td>');
+                  echo('<td>' . $row['stock'] . '</td>');
+                  echo('<td>' . $row['price'] . '</td>');
+                  echo('</tr>');
+                }
+              }
+            ?>
             </tbody>
         </table>
         <h3 class="text-light">Product toevoegen</h3>
-        <form class=" text-light">
+        <form class=" text-light" action="includes/add_product.php">
             <div class="form-group">
                 <label for="productname">Productnaam</label>
-                <input class="form-control" id="productname" placeholder="Enter productname">
+                <input class="form-control" id="productname" name="name" placeholder="Enter productname">
             </div>
             <div class="form-group">
                 <label for="stock">In Stock</label>
-                <input type="number" step="1" id="stock">
+                <input type="number" name="stock" step="1" id="stock">
             </div>
             <div class="form-group">
                 <label for="priceperpiece">Price per piece</label>
-                <input type="number" step=".01" id="priceperpiece">
+                <input type="number" name="price" step=".01" id="priceperpiece">
             </div>
             <div class="form-group">
                 <label for="image">Productafbeelding naam</label>
-                <input class="form-control" id="image" placeholder="Enter imagename">
+                <input class="form-control" name="image" id="image" placeholder="Enter imagename">
             </div>
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary" name="submit-product">Add</button>sander
+            
         </form>
     </div>
     <div style="margin: 75px;">
