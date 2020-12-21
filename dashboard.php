@@ -214,19 +214,40 @@
             <select class="mdb-select md-form" name="user">
                 <option value="" disabled selected>Kies een gebruiker</option>
                 <?php
-                  $sql = "SELECT CustomerID, first_name, last_name FROM Customers WHERE admin = 1 ORDER BY first_name, last_name, CustomerID;";
+                  $sql = "SELECT CustomerID, CONCAT(first_name, ' ', last_name) AS Name FROM Customers WHERE admin = 1 ORDER BY Name, CustomerID;";
                   $result = mysqli_query($conn, $sql);
                   $resultCheck = mysqli_num_rows($result);
                   if($resultCheck > 0)
                   {
                     while($row = mysqli_fetch_assoc($result))
                     {
-                      echo('<option value="' . $row['CustomerID'] . '">' .$row['first_name'] . ' ' . $row['last_name'] . '</option>');
+                      echo('<option value="' . $row['CustomerID'] . '">' .$row['Name'] . '</option>');
                     }
                   }
                 ?>
             </select>
             <button type="submit" class="btn btn-primary" name="submit-remove-admin">Verwijderen</button>
+        </form>
+    </div>
+    <div style="margin: 75px;">
+        <h3 class="text-light">Gebruiker verwijderen</h3>
+        <form action="includes/remove_user.php" method="POST">
+            <select class="mdb-select md-form" name="user">
+                <option value="" disabled selected>Kies een gebruiker</option>
+                <?php
+                  $sql = "SELECT CustomerID, CONCAT(first_name, ' ', last_name) AS Name FROM Customers ORDER BY Name, CustomerID;";
+                  $result = mysqli_query($conn, $sql);
+                  $resultCheck = mysqli_num_rows($result);
+                  if($resultCheck > 0)
+                  {
+                    while($row = mysqli_fetch_assoc($result))
+                    {
+                      echo('<option value="' . $row['CustomerID'] . '">' .$row['Name'] . '</option>');
+                    }
+                  }
+                ?>
+            </select>
+            <button type="submit" class="btn btn-primary" name="submit-remove-user">Verwijderen</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
