@@ -88,12 +88,12 @@
                         if($resultCheck4 > 0)
                         {
                           $row4 = mysqli_fetch_assoc($result4);
-                          $price = $row['price'];
+                          $price = $row4['price'];
                           $som += ($price * $amount);
                         }
                         else
                         {
-                          $som += 0;
+                          $som += 1001;
                         }
                       }
                     }
