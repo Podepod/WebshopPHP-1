@@ -5,18 +5,53 @@
         $name = $_POST['name'];
         $stock = $_POST['stock'];
         $price = $_POST['price'];
-        if($_POST['image'] != "")
+        $image = $_FILES['image'];
+        if($image)
         {
-            $image = $_POST['image'];
+            $imageName = $image['name'];
+            $imageTmp = $image['tmp_name'];
+            $imgSize = $image['size'];
+            $imgError = $image['error'];
+
+            $imgExt = explode('.',$imageName);
+            $imgExt = strtolower(end($imgExt));
+
+            $allowedExt = array('jpg', 'jpeg', 'png');
+
+            if(in_array($imgExt, $allowedExt))
+            {
+                if($imgError == 0)
+                {
+                    if($imgSize <= 5000) #If imgSize is smaller then or equal to 5MB
+                    {
+                        $imageNewName = uniqid('', true) . "." . $imgExt;
+                        $imageDest = "../images/products/" . $imageNewName;
+                        move_uploaded_file($imageTmp,$imageDest);
+                    }
+                    else
+                    {
+                        header("Location: ../dashboard.php?error=MaxSize=5MB");
+                    }
+                }
+                else
+                {
+                    header("Location: ../dashboard.php?error=Error:" . $imgError);
+                }
+            }
+            else
+            {
+                header("Location: ../dashboard.php?error=FileTypeNotAllowed");
+            }
+
             $sql = "INSERT INTO Products (name, stock, price, image) VALUES (?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql))
             {
-                header("Location: ../register.php?error=sqlerror1");
+                header("Location: ../dashboard.php?error=sqlerror1");
             }
             else
             {
-                mysqli_stmt_bind_param($stmt, "ssss", $name, $stock, $price, $image);
+                mysqli_stmt_bind_param($stmt, "ssss", $name, $stock, $price, $imageNewName);
                 mysqli_stmt_execute($stmt);
                 header("Location: ../dashboard.php?successWithImage");
             }

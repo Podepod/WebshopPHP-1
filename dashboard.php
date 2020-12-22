@@ -146,7 +146,7 @@
             </tbody>
         </table>
         <h3 class="text-light">Product toevoegen</h3>
-        <form class=" text-light" action="includes/add_product.php" method="POST">
+        <form class=" text-light" action="includes/add_product.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="productname">Productnaam</label>
                 <input class="form-control" id="productname" name="name" placeholder="Enter productname">
@@ -160,8 +160,8 @@
                 <input type="number" name="price" step=".01" id="priceperpiece">
             </div>
             <div class="form-group">
-                <label for="image">Productafbeelding naam</label>
-                <input class="form-control" name="image" id="image" placeholder="Enter image path">
+                <label for="image">Productafbeelding</label>
+                <input type="file" name="image">
             </div>
             <button type="submit" class="btn btn-primary" name="submit-product">Add</button>
         </form>
