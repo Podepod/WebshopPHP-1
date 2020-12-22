@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require "config.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -51,12 +52,48 @@
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
   <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal text-light">Welcome to our store</h1>
-    <p class="lead font-weight-normal text-light">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-    <button type="button" class="btn btn-outline-light">Light</button>
+    <h1 class="display-4 font-weight-normal text-light">Ons aanbod</h1>
   </div>
 </div>
-
+<?php
+  $sql = "SELECT * FROM Products;";
+	$result = mysqli_query($conn, $sql);
+	$resultCheck = mysqli_num_rows($result);
+	if($resultCheck > 0)
+	{
+    $i = 0;
+		while($row = mysqli_fetch_assoc($result))
+		{
+      if($i == 0)
+      {
+        echo('<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">');
+      }
+      echo('<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">');
+      echo('<div class="my-3 py-3">');
+      echo('<h2 class="display-5">' . $row['name'] . '</h2>');
+      if($row['image'] != "")
+      {
+        echo('<img src="' . $row['image'] . '" alt="Product image">');
+      }
+      else
+      {
+        echo('<p>No image</p>');
+      }
+      echo('</div>');
+      echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>');
+      echo('</div>');
+      if($i == 1)
+      {
+        echo('</div>');
+      }
+      $i++;
+      if($i == 2)
+      {
+        $i = 0;
+      }
+    }
+	}
+?>
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
   <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
     <div class="my-3 py-3">
