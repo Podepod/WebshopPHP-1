@@ -92,6 +92,10 @@
         $i = 0;
       }
     }
+    if($resultCheck % 2 == 1)
+    {
+      echo('</div>');
+    }
   }
   else
   {
