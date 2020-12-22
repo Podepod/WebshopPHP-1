@@ -25,7 +25,7 @@
                     if($imgSize <= 5000) #If imgSize is smaller then or equal to 5MB
                     {
                         $imageNewName = uniqid('', true) . "." . $imgExt;
-                        $imageDest = "../images/products/" . $imageNewName;
+                        $imageDest = "images/products/" . $imageNewName;
                         move_uploaded_file($imageTmp,$imageDest);
                     }
                     else
