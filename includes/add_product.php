@@ -42,7 +42,7 @@
                     }
                     else
                     {
-                        header("Location: ../dashboard.php?error=MaxSize=5MB");
+                        header("Location: ../dashboard.php?error=Size=".$imgSize);
                     }
                 }
                 else
