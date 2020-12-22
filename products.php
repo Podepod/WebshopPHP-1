@@ -66,11 +66,12 @@
 		{
       if($i == 0)
       {
-        echo('<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">');
+        echo('<p>BlaBla1</p>');
+        #echo('<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">');
       }
-      echo('<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">');
-      echo('<div class="my-3 py-3">');
-      echo('<h2 class="display-5">' . $row['name'] . '</h2>');
+      #echo('<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">');
+      #echo('<div class="my-3 py-3">');
+      #echo('<h2 class="display-5">' . $row['name'] . '</h2>');
       #if($row['image_path'])
       #{
       #  echo('<img src="' . $row['image_path'] . '" alt="Product image">');
@@ -79,22 +80,25 @@
       #{
       #  echo('<p>No image</p>');
       #}
-      echo('</div>');
-      echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>');
-      echo('</div>');
+      #echo('</div>');
+      #echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>');
+      #echo('</div>');
       if($i == 1)
       {
-        echo('</div>');
+        echo('<p>BlaBla2</p>');
+        #echo('</div>');
       }
       $i++;
       if($i == 2)
       {
+        echo('<p>BlaBla3</p>');
         $i = 0;
       }
     }
     if($resultCheck % 2 == 1)
     {
-      echo('</div>');
+      echo('<p>BlaBla4</p>');
+      #echo('</div>');
     }
   }
   else
