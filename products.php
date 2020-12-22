@@ -72,7 +72,7 @@
       echo('<div class="my-3 py-3">');
       echo('<h2 class="display-5">' . $row['name'] . '</h2>');
       echo('</div>');
-      echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img src="' . $row['image_name'] . '" alt="Product image"></div>');
+      echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img src="images/products/' . $row['image_name'] . '" alt="Product image"></div>');
       echo('</div>');
       if($i == 1)
       {

@@ -27,6 +27,18 @@
                         $imageNewName = uniqid('', true) . "." . $imgActualExt;
                         $imageDest = 'images/products/' . $imageNewName;
                         move_uploaded_file($imageTmp,$imageDest);
+                        $sql = "INSERT INTO Products (name, stock, price, image_name) VALUES (?, ?, ?, ?)";
+                        $stmt = mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt, $sql))
+                        {
+                            header("Location: ../dashboard.php?error=sqlerror1");
+                        }
+                        else
+                        {
+                            mysqli_stmt_bind_param($stmt, "ssss", $name, $stock, $price, $imageNewName);
+                            mysqli_stmt_execute($stmt);
+                            header("Location: ../dashboard.php?successWithImage=".$imageDest);
+                        }
                     }
                     else
                     {
@@ -41,19 +53,6 @@
             else
             {
                 header("Location: ../dashboard.php?error=FileTypeNotAllowed");
-            }
-
-            $sql = "INSERT INTO Products (name, stock, price, image_name) VALUES (?, ?, ?, ?)";
-            $stmt = mysqli_stmt_init($conn);
-            if(!mysqli_stmt_prepare($stmt, $sql))
-            {
-                header("Location: ../dashboard.php?error=sqlerror1");
-            }
-            else
-            {
-                mysqli_stmt_bind_param($stmt, "ssss", $name, $stock, $price, $imageNewName);
-                mysqli_stmt_execute($stmt);
-                header("Location: ../dashboard.php?successWithImage=".$imageDest);
             }
         }
         else
