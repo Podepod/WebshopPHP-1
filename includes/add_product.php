@@ -22,7 +22,7 @@
             {
                 if($imgError === 0)
                 {
-                    if($imgSize <= 5000) #If imgSize is smaller then or equal to 5MB
+                    if($imgSize <= 5000000) #If imgSize is smaller then or equal to 5MB
                     {
                         $imageNewName = uniqid('', true) . "." . $imgActualExt;
                         $imageDest = 'images/products/' . $imageNewName;
