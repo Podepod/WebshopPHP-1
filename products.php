@@ -71,14 +71,14 @@
       echo('<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">');
       echo('<div class="my-3 py-3">');
       echo('<h2 class="display-5">' . $row['name'] . '</h2>');
-      if($row['image_path'])
-      {
-        echo('<img src="' . $row['image_path'] . '" alt="Product image">');
-      }
-      else
-      {
-        echo('<p>No image</p>');
-      }
+      #if($row['image_path'])
+      #{
+      #  echo('<img src="' . $row['image_path'] . '" alt="Product image">');
+      #}
+      #else
+      #{
+      #  echo('<p>No image</p>');
+      #}
       echo('</div>');
       echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>');
       echo('</div>');
