@@ -43,7 +43,7 @@
                 header("Location: ../dashboard.php?error=FileTypeNotAllowed");
             }
 
-            $sql = "INSERT INTO Products (name, stock, price, image) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO Products (name, stock, price, image_name) VALUES (?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql))
             {
