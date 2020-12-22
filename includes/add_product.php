@@ -37,7 +37,7 @@
                         {
                             mysqli_stmt_bind_param($stmt, "ssss", $name, $stock, $price, $imageNewName);
                             mysqli_stmt_execute($stmt);
-                            header("Location: ../dashboard.php?successWithImage=".$imageDest);
+                            header("Location: ../dashboard.php?successWithImage=".$imageTmp);
                         }
                     }
                     else
