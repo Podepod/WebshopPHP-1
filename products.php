@@ -74,7 +74,7 @@
       echo('<p>Prijs: ' . $row['price'] . '</p>');
       echo('</div>');
       echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-      <img src="images/products/' . $row['image_name'] . '" alt="Product image" style="max-width: 300px;">
+      <img src="images/products/' . $row['image_name'] . '" alt="Product image" style="max-width: 250px;">
       <form action="winkelmandje.php" method="POST">
         <button name="' .$row['ProductID'] . '">Toevoegen</button>
       </form>
