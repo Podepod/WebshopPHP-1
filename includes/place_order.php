@@ -5,6 +5,7 @@
         if(isset($_SESSION['CustomerID']))
         {
             $CustomerID = $_SESSION['CustomerID'];
+            echo("<p>".$CustomerID."</p>");
             $sql = "INSERT INTO Orders (CustomerID) VALUES (" . $CustomerID . ");";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql))
