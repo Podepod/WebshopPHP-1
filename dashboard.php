@@ -164,6 +164,7 @@
 
         <h3 class="text-light">Product aanpassen</h3>
         <form class=" text-light" action="includes/update_product.php" method="POST">
+              <select class="mdb-select md-form" name="product">
               <option value="" disabled selected>Kies een product</option>
               <?php
                     $sql = "SELECT * FROM Products ORDER BY name, ProductID;";
