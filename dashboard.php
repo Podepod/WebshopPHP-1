@@ -161,7 +161,39 @@
             </div>
             <button type="submit" class="btn btn-primary" name="submit-product">Add</button>
         </form>
+
+        <h3 class="text-light">Product aanpassen</h3>
+        <form class=" text-light" action="includes/update_product.php" method="POST">
+              <option value="" disabled selected>Kies een product</option>
+              <?php
+                    $sql = "SELECT * FROM Products ORDER BY name, ProductID;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    if($resultCheck > 0)
+                    {
+                      while($row = mysqli_fetch_assoc($result))
+                      {
+                        echo('<option value="' . $row['ProductID'] . '">' .$row['name'] . '</option>');
+                      }
+                    }
+                  ?>
+            </select>
+            <div class="form-group">
+                <label for="productname">Productnaam</label>
+                <input class="form-control" id="productname" name="name" placeholder="<?php echo($row['ProductName']); ?>">
+            </div>
+            <div class="form-group">
+                <label for="stock">In Stock</label>
+                <input type="number" name="stock" step="1" id="stock" placeholder="<?php echo($row['amount']); ?>">
+            </div>
+            <div class="form-group">
+                <label for="priceperpiece">Price per piece</label>
+                <input type="number" name="price" step=".01" id="priceperpiece" placeholder="<?php echo($row['price']); ?>">
+            </div>
+            <button type="submit" class="btn btn-primary" name="submit-update-product">Add</button>
+        </form>
     </div>
+
     <div style="margin: 75px;">
         <h3 class="text-light">Product verwijderen</h3>
         <form method="POST" action="includes/remove_product.php">
