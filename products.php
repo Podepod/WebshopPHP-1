@@ -75,15 +75,8 @@
 <button id="all" type="submit" class="btn btn-primary">Everything</button>
 <div id="products">
 <?php
-require "includes/config.php";
-    if($load == "Lightsabers")
-    {
-        $sql = "SELECT * FROM Products WHERE name LIKE '%Light Saber%';";
-    }
-    else
-    {
-        $sql = "SELECT * FROM Products;";
-    }
+    require "includes/config.php";
+    $sql = "SELECT * FROM Products;";
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
     if($resultCheck > 0)
