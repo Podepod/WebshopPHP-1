@@ -159,10 +159,6 @@
                 <label for="priceperpiece">Price per piece</label>
                 <input type="number" name="price" step=".01" id="priceperpiece">
             </div>
-            <div class="form-group">
-                <label for="image">Productafbeelding</label>
-                <input type="file" name="image">
-            </div>
             <button type="submit" class="btn btn-primary" name="submit-product">Add</button>
         </form>
     </div>
