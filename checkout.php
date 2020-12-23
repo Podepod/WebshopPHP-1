@@ -1,5 +1,39 @@
 <?php
   session_start();
+  if(isset($_POST["submit-add"]))
+  {
+    if(isset($_SESSION["shopping-cart"]))
+    {
+      $inList = 0;
+      $length = 0;
+      foreach($_SESSION["shopping-cart"] as &$item)
+      {
+        if($item['ProductID'] == $_POST["ProductID"])
+        {
+          $item["amount"] += $_POST["quantity"];
+          $inList = 1;
+          continue;
+        }
+        $length++;
+      }
+      if(!$inList)
+      {
+        $item = array(
+          'ProductID' => $_POST['ProductID'],
+          'amount' => $_POST['quantity']
+        );
+        $_SESSION["shopping-cart"][$length+1] = $item;
+      }
+    }
+    else
+    {
+      $item = array(
+        'ProductID' => $_POST['ProductID'],
+        'amount' => $_POST['quantity']
+      );
+      $_SESSION["shopping-cart"][0] = $item;
+    }
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -61,40 +95,39 @@
     <div class="col-md-4 order-md-2 mb-4">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Jouw winkelkarretje</span>
-        <span class="badge badge-secondary badge-pill">3</span>
       </h4>
       <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Product name</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted"><img alt="AurebeshSans-Serif credit.png" src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" decoding="async" data-image-name="AurebeshSans-Serif credit.png" data-image-key="AurebeshSans-Serif_credit.png" data-src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" class=" lazyloaded" width="8" height="13">12</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Second product</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted"><img alt="AurebeshSans-Serif credit.png" src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" decoding="async" data-image-name="AurebeshSans-Serif credit.png" data-image-key="AurebeshSans-Serif_credit.png" data-src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" class=" lazyloaded" width="8" height="13">8</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Third item</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted"><img alt="AurebeshSans-Serif credit.png" src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" decoding="async" data-image-name="AurebeshSans-Serif credit.png" data-image-key="AurebeshSans-Serif_credit.png" data-src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" class=" lazyloaded" width="8" height="13">5</span>
-        </li>
+            <?php
+              $sum = 0;
+              foreach($_SESSION["shopping-cart"] as &$item)
+              {
+                $sql = "SELECT name, price FROM Products WHERE ProductID = ". $item['ProductID'] . ";";
+                $result = mysqli_query($conn, $sql);
+                $resultCheck = mysqli_num_rows($result);
+                if($resultCheck > 0)
+                {
+                  $name = $row['name'];
+                  $price = $row['price'];
+                }
+                echo('<li class="list-group-item d-flex justify-content-between lh-condensed"><div>');
+                echo(' <h6 class="my-0">' . $name . '</h6>');
+                echo('<small class="text-muted">' . $item['amount'] . '</small></div>');
+                echo('<span class="text-muted">€' . $price . '</span></li>');
+                $sum += $price * $item['amount'];
+              }
+            ?>
         <li class="list-group-item d-flex justify-content-between">
-          <span>Total (Credits)</span>
-          <strong><img alt="AurebeshSans-Serif credit.png" src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" decoding="async" data-image-name="AurebeshSans-Serif credit.png" data-image-key="AurebeshSans-Serif_credit.png" data-src="https://static.wikia.nocookie.net/starwars/images/3/3c/AurebeshSans-Serif_credit.png/revision/latest/scale-to-width-down/8?cb=20080415135725" class=" lazyloaded" width="8" height="13">20</strong>
+          <span>Total</span>
+            <?php
+              echo('<strong>€' . $sum . '</strong>');
+            ?>
         </li>
       </ul>
 
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Factuur adres</h4>
-      <form class="needs-validation" novalidate>
+      <form action="betalen.php" method="POST">
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName" class="label-light">Voornaam</label>
