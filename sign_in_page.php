@@ -33,7 +33,7 @@
   <div class="container">
     <div class="row">
     <form class="form-signin" action="includes/sign_in.php" method="POST">
-      <img class="mb-4" src="images/GESS_logo_light.png" alt="" width="144" height="108">
+      <a href="index.php"><img class="mb-4" src="images/GESS_logo_light.png" alt="" width="144" height="108"></a>
       <h1 class="h3 mb-3 font-weight-normal text-light">Sign in here</h1>
       <label for="email" class="sr-only text-light">Email address</label>
       <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
