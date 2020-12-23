@@ -35,11 +35,6 @@
             loadProduct: "Lightsabers"
           });
         });
-        $("#all").click(function(){
-          $("#products").load("includes/load_products.php", {
-            loadProduct: "NoU"
-          });
-        });
       });
     </script>
   </head>
