@@ -108,7 +108,7 @@
                 }
                 else
                 {
-                  header("Location: checkout.php?error=sqlerror1");
+                  header("Location: checkout.php?error=" . $item['ProductID']);
                 }
               }
             ?>
