@@ -2,7 +2,7 @@
   session_start();
   if(isset($_SESSION['CustomerID']))
   {
-    if($_SESSION['admin'] != 1)
+    if($_SESSION['Admin'] != 1)
     {
       header("Location: index.php");
     }

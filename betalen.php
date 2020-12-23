@@ -62,7 +62,9 @@
    <h1>Bedankt voor uw bestelling</h1>
    <a href="index.php">Terug naar de hoofdpagina</a>
   </main>
-
+  <?php
+    unset($_SESSION['shopping-cart']);
+  ?>
   <footer class="mastfoot mt-auto">
     <div class="inner">
       <p>Volg ons op <a href="wookiebook.html">Wookiebook</a></p>
