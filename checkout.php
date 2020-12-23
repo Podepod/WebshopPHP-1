@@ -108,12 +108,12 @@
                 {
                   $name = $row['name'];
                   $price = $row['price'];
+                  echo('<li class="list-group-item d-flex justify-content-between lh-condensed"><div>');
+                  echo(' <h6 class="my-0">' . $name . '</h6>');
+                  echo('<small class="text-muted">' . $item['amount'] . '</small></div>');
+                  echo('<span class="text-muted">€' . $price . '</span></li>');
+                  $sum += $price * $item['amount'];
                 }
-                echo('<li class="list-group-item d-flex justify-content-between lh-condensed"><div>');
-                echo(' <h6 class="my-0">' . $name . '</h6>');
-                echo('<small class="text-muted">' . $item['amount'] . '</small></div>');
-                echo('<span class="text-muted">€' . $price . '</span></li>');
-                $sum += $price * $item['amount'];
               }
             ?>
         <li class="list-group-item d-flex justify-content-between">
@@ -189,15 +189,6 @@
               Je postcode is een verplicht veld.
             </div>
           </div>
-        </div>
-        <hr class="mb-4">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="same-address">
-          <label class="custom-control-label" style="color: #ebebeb;" for="same-address">Zending adres is hetzelfde als mijn factuur adres</label>
-        </div>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="save-info">
-          <label class="custom-control-label" style="color: #ebebeb;" for="save-info">Sla op voor de volgende keer</label>
         </div>
         <hr class="mb-4">
 
