@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/checkout.css">
     <link rel='icon' href='GESS.ico' type='image/x-icon'/>
+    <script defer src="scripts/check-fields.js"></script>
 
     <style>
       .bd-placeholder-img {
@@ -55,6 +56,7 @@
         <img class="d-block mx-auto mb-4" src="images/GESS_logo_light.png" alt="logo" width="144" height="108">
         <h1>Registreren</h1>
         <h4>Registreer je hier:</h4>
+        <div id="errors"></div>
       </div>
     </div>
     <div class="container" style="max-width:80%;">
