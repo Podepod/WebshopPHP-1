@@ -31,10 +31,15 @@
                 foreach($_SESSION["shopping-cart"] as $item)
                 {
                     $sql = "INSERT INTO Order_details (OrderID, ProductID, amount) VALUES (" . $OrderID . "," . $item['ProductID'] . "," . $item['Quantity'] . ");";
-                    $stmt = mysqli_stmt_init($conn);
+                    try{
+                      $stmt = mysqli_stmt_init($conn);
+                    }
+                    catch (Exception $e) {
+                      header("Location: ../checkout.php?error=".$e->getMessage());
+                    }
                     if(!mysqli_stmt_prepare($stmt, $sql))
                     {
-                        header("Location: ../checkout.php?error=sqlerror3");
+                        header("Location: ../checkout.php?error=sqlerror4");
                     }
                     else
                     {
