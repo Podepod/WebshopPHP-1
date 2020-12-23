@@ -125,77 +125,13 @@
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Factuur adres</h4>
-      <form action="betalen.php" method="POST">
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="firstName" class="label-light">Voornaam</label>
-            <input type="text" class="form-control" id="firstName" placeholder="voornaam" value="" required>
-            <div class="invalid-feedback">
-              Je voornaam is een verplicht veld.
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="lastName" class="label-light">Achternaam</label>
-            <input type="text" class="form-control" id="lastName" placeholder="achternaam" value="" required>
-            <div class="invalid-feedback">
-              Je achternaam is een verplicht veld.
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="username" class="label-light">e-mailadres</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">@</span>
-            </div>
-            <input type="email" class="form-control" id="username" placeholder="Email" required>
-            <div class="invalid-feedback" style="width: 100%;">
-              Je e-mailadres is een verplicht veld.
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="address" class="label-light">Adres</label>
-          <input type="text" class="form-control" id="address" placeholder="Staart + nr" required>
-          <div class="invalid-feedback">
-            Geef a.u.b. je adres in.
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="address2" class="label-light">Adres 2 <span class="text-muted">(Optioneel)</span></label>
-          <input type="text" class="form-control" id="address2" placeholder="Appartment of suite">
-        </div>
-
-        <div class="row">
-          <div class="col-md-5 mb-3">
-            <label for="country" class="label-light">Land</label>
-            <select class="custom-select d-block w-100" id="country" required>
-              <option value="">Kies...</option>
-              <option>België</option>
-            </select>
-            <div class="invalid-feedback">
-              Geef a.u.b. een bestaand land in.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="postcode" class="label-light">Postcode</label>
-            <input type="text" class="form-control" id="postcode" placeholder="" required>
-            <div class="invalid-feedback">
-              Je postcode is een verplicht veld.
-            </div>
-          </div>
-        </div>
-        <hr class="mb-4">
-
+      <form action="includes/place_prder.php.php" method="POST">
         <h4 class="mb-3">Betaling</h4>
 
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
             <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-            <label class="custom-control-label" style="color: #ebebeb;" for="credit">Credits card</label>
+            <label class="custom-control-label" style="color: #ebebeb;" for="credit">Credit card</label>
           </div>
           <div class="custom-control custom-radio">
             <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
@@ -229,7 +165,7 @@
           </div>
         </div>
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Ga verder naar betalen</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit-order">Ga verder naar betalen</button>
       </form>
     </div>
   </div>
