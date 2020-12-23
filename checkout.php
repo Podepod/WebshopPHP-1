@@ -125,7 +125,7 @@
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Factuur adres</h4>
-      <form action="includes/place_prder.php.php" method="POST">
+      <form action="includes/place_order.php.php" method="POST">
         <h4 class="mb-3">Betaling</h4>
 
         <div class="d-block my-3">
@@ -156,7 +156,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3 mb-3">
+          <div class="col-md-4 mb-4">
             <label for="cc-expiration" class="label-light">Vervaldatum</label>
             <input type="date" class="form-control" id="cc-expiration" placeholder="" required>
             <div class="invalid-feedback">
