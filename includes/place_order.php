@@ -2,10 +2,10 @@
     if(isset($_POST['submit-order']))
     {
         require "config.php";
+        session_start();
         if(isset($_SESSION['CustomerID']))
         {
             $CustomerID = $_SESSION['CustomerID'];
-            echo("<p>".$CustomerID."</p>");
             $sql = "INSERT INTO Orders (CustomerID) VALUES (" . $CustomerID . ");";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql))
@@ -15,7 +15,7 @@
             else
             {
                 mysqli_stmt_execute($stmt);
-                $sql = "SELECT OrderID FROM Orders WHERE CustomerID=" . $CustomerID . "ORDER BY OrderID DESC LIMIT 1;";
+                $sql = "SELECT OrderID FROM Orders WHERE CustomerID=" . $CustomerID . " ORDER BY OrderID DESC LIMIT 1;";
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql))
                 {
