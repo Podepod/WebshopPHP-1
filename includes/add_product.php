@@ -7,7 +7,7 @@
         $stock = $_POST['stock'];
         $price = $_POST['price'];
         $image = $_FILES['image'];
-        if($image)
+        if(end(explode('.',$image['name'])) != "Array")
         {
             $imageName = $image['name'];
             $imageTmp = $image['tmp_name'];
