@@ -36,8 +36,14 @@
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link" href="index.php">Home</a>
         <a class="nav-link active" href="products.php">Producten</a>
-        <?php if(isset($_SESSION["CustomerID"]))
+        <?php
+          if(isset($_SESSION["CustomerID"]))
           {
+            echo('<a class="nav-link" href="checkout.php">Winkelmandje</a>');
+            if($_SESSION["Admin"] == 1)
+            {
+              echo('<a class="nav-link" href="dashboard.php">Dashboard</a>');
+            }
             echo('<a class="nav-link" href="includes/sign_out.php">Logout</a>');
           }
           else

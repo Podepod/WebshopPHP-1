@@ -1,5 +1,9 @@
 <?php
   session_start();
+  if(!isset($_SESSION['CustomerID']))
+  {
+    header("Location: sign_in_page.php");
+  }
 ?>
 <!doctype html>
 <html lang="nl">

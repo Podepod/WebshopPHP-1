@@ -1,5 +1,9 @@
 <?php
   session_start();
+  if(!isset($_SESSION['CustomerID']))
+  {
+    header("Location: sign_in_page.php");
+  }
   require "includes/config.php";
   if(isset($_POST["submit-add"]))
   {
@@ -124,7 +128,6 @@
 
     </div>
     <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">Factuur adres</h4>
       <form action="includes/place_order.php" method="POST">
         <h4 class="mb-3">Betaling</h4>
 

@@ -1,5 +1,12 @@
 <?php
   session_start();
+  if(isset($_SESSION['CustomerID']))
+  {
+    if($_SESSION['admin'] != 1)
+    {
+      header("Location: index.php");
+    }
+  }
   require "includes/config.php";
 ?>
 <!DOCTYPE html>
@@ -159,7 +166,7 @@
                 <label for="priceperpiece">Price per piece</label>
                 <input type="number" name="price" step=".01" id="priceperpiece">
             </div>
-            <button type="submit" class="btn btn-primary" name="submit-product">Add</button>
+            <button type="submit" class="btn btn-primary" name="submit-product">Toevoegen</button>
         </form>
 
         <h3 class="text-light">Product aanpassen</h3>
@@ -191,7 +198,7 @@
                 <label for="priceperpiece">Price per piece</label>
                 <input type="number" name="price" step=".01" id="priceperpiece" placeholder="<?php echo($row['price']); ?>">
             </div>
-            <button type="submit" class="btn btn-primary" name="submit-update-product">Add</button>
+            <button type="submit" class="btn btn-primary" name="submit-update-product">Wijzig</button>
         </form>
     </div>
 
