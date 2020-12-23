@@ -73,10 +73,10 @@
       echo('<h2 class="display-5">' . $row['name'] . '</h2>');
       echo('<p>Prijs: ' . $row['price'] . '</p>');
       echo('</div>');
-      echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+      echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 500px; border-radius: 21px 21px 0 0;">
       <img src="images/products/' . $row['image_name'] . '" alt="Product image" style="max-width: 250px;">
       <form action="checkout.php" method="POST">
-        <input type="number" name="quantity" value="1">
+        <input type="number" name="quantity" value="1" style="max-width: 100px;">
         <input type="hidden" name="ProductID" value="' . $$row['ProductID'] . '>
         <button name="submit-add">Toevoegen</button>
       </form>
