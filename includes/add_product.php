@@ -1,4 +1,5 @@
 <?php
+
     if(isset($_POST['submit-product']))
     {
         require 'config.php';
@@ -24,8 +25,9 @@
                 {
                     if($imgSize <= 5000000) #If imgSize is smaller then or equal to 5MB
                     {
+                        mkdir("Producten");
                         $imageNewName = uniqid('', true) . "." . $imgActualExt;
-                        $imageDest = "../images/products/" . $imageNewName;
+                        $imageDest = "Producten/" . $imageNewName;
                         if(move_uploaded_file($imageTmp,$imageDest))
                         {
                             $sql = "INSERT INTO Products (name, stock, price, image_name) VALUES (?, ?, ?, ?)";
@@ -43,6 +45,7 @@
                         }
                         else
                         {
+
                             header("Location: ../dashboard.php?error=CouldNotMove");
                         }
                     }
