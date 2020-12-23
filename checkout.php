@@ -125,7 +125,7 @@
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Factuur adres</h4>
-      <form action="includes/place_order.php.php" method="POST">
+      <form action="includes/place_order.php" method="POST">
         <h4 class="mb-3">Betaling</h4>
 
         <div class="d-block my-3">
