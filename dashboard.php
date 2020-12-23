@@ -230,14 +230,14 @@
         <form action="includes/sign_up.php" method="POST">
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="firstName" class="label-light">Voornaam</label>
+            <label for="firstName" class="text-light">Voornaam</label>
             <input type="text" class="form-control" name="firstname" id="firstName" placeholder="voornaam" value="" required>
             <div class="invalid-feedback">
               Je voornaam is een verplicht veld.
             </div>
           </div>
           <div class="col-md-6 mb-3">
-            <label for="lastName" class="label-light">Achternaam</label>
+            <label for="lastName" class="text-light">Achternaam</label>
             <input type="text" class="form-control" name="lastname" id="lastName" placeholder="achternaam" value="" required>
             <div class="invalid-feedback">
               Je achternaam is een verplicht veld.
@@ -246,7 +246,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="email" class="label-light">e-mailadres</label>
+          <label for="email" class="text-light">e-mailadres</label>
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">@</span>
@@ -259,7 +259,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="birthdate" class="label-light">Geboortedatum</label>
+          <label for="birthdate" class="text-light">Geboortedatum</label>
           <input type="date" class="form-control" name="birthdate" id="birthdate" required>
           <div class="invalid-feedback">
             Geef a.u.b. je geboortedatum in.
@@ -267,7 +267,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="address" class="label-light">Adres</label>
+          <label for="address" class="text-light">Adres</label>
           <input type="text" class="form-control" name="address" id="address" placeholder="Straat + nr" required>
           <div class="invalid-feedback">
             Geef a.u.b. je adres in.
@@ -275,7 +275,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="city" class="label-light">Stad</label>
+          <label for="city" class="text-light">Stad</label>
           <input type="text" class="form-control" name="city" id="city" placeholder="Stad" required>
           <div class="invalid-feedback">
             Geef a.u.b. je stad in.
@@ -284,7 +284,7 @@
 
         <div class="row">
           <div class="col-md-5 mb-3">
-            <label for="country" class="label-light">Land</label>
+            <label for="country" class="text-light">Land</label>
             <select class="custom-select d-block w-100" id="country" name="country" required>
               <option value="">Kies...</option>
               <option>België</option>
@@ -294,7 +294,7 @@
             </div>
           </div>
           <div class="col-md-3 mb-3">
-            <label for="postcode" class="label-light">Postcode</label>
+            <label for="postcode" class="text-light">Postcode</label>
             <input type="text" class="form-control" id="postcode" name="postcode" placeholder="" required>
             <div class="invalid-feedback">
               Je postcode is een verplicht veld.
@@ -303,11 +303,11 @@
         </div>
         <div class="row">
             <div class="col-md-5 mb-3">
-              <label for="password" class="label-light">Wachtwoord</label>
+              <label for="password" class="text-light">Wachtwoord</label>
               <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="col-md-5 mb-3">
-              <label for="passwordConfirm" class="label-light">Bevestig wachtwoord</label>
+              <label for="passwordConfirm" class="text-light">Bevestig wachtwoord</label>
               <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" required>  
             </div>
         </div>
