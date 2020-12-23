@@ -44,7 +44,7 @@
             </thead>
             <tbody>
               <?php
-                $sql = "SELECT * FROM Orders;";
+                $sql = "SELECT * FROM Orders ORDER BY OrderID DESC;";
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 if($resultCheck > 0)

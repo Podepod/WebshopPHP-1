@@ -28,6 +28,20 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="styles/product.css" rel="stylesheet">
+    <script>
+      $(document).ready(function(){
+        $("#lightsabers").click(function(){
+          $("#products").load("includes/load_products.php", {
+            loadProduct: "Lightsabers"
+          });
+        });
+        $("#all").click(function(){
+          $("#products").load("includes/load_products.php", {
+            loadProduct: "NoU"
+          });
+        });
+      });
+    </script>
   </head>
   <body>
   <header class="masthead mb-auto">
@@ -39,7 +53,7 @@
         <?php
           if(isset($_SESSION["CustomerID"]))
           {
-            echo('<a class="nav-link" href="checkout.php">Winkelmandje</a>');
+            echo('<a class="nav-link" href="checkout.php">Mandje</a>');
             if($_SESSION["Admin"] == 1)
             {
               echo('<a class="nav-link" href="dashboard.php">Dashboard</a>');
@@ -60,54 +74,10 @@
     <h1 class="display-4 font-weight-normal text-light">Ons aanbod</h1>
   </div>
 </div>
-<?php
-  require "includes/config.php";
-  $sql = "SELECT * FROM Products;";
-	$result = mysqli_query($conn, $sql);
-	$resultCheck = mysqli_num_rows($result);
-	if($resultCheck > 0)
-	{
-    $i = 0;
-		while($row = mysqli_fetch_assoc($result))
-		{
-      if($i == 0)
-      {
-        echo('<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">');
-      }
-      echo('<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">');
-      echo('<div class="my-3 py-3">');
-      echo('<h2 class="display-5">' . $row['name'] . '</h2>');
-      echo('<p>Prijs: ' . $row['price'] . '</p>');
-      echo('</div>');
-      echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 400px; border-radius: 21px 21px 0 0;">');
-      echo('<img src="images/products/' . $row['image_name'] . '" alt="Product image" style="max-width: 250px;">');
-      echo('<form action="checkout.php" method="POST">
-            <input type="number" name="Quantity" value="1" style="max-width: 100px;">
-            <input type="hidden" name="ProductID" value="' . $row['ProductID'] . '">
-            <button name="submit-add">Toevoegen</button>
-            </form>');
-      echo('</div>');
-      echo('</div>');
-      if($i == 1)
-      {
-        echo('</div>');
-      }
-      $i++;
-      if($i == 2)
-      {
-        $i = 0;
-      }
-    }
-    if($resultCheck % 2 == 1)
-    {
-      echo('</div>');
-    }
-  }
-  else
-  {
-    header("Location: ../products.php?error=noProducts");
-  }
-?>
+<button id="lightsabers" type="submit" class="btn btn-primary">Only lightsabers</button>
+<button id="all" type="submit" class="btn btn-primary">Everything</button>
+<div id="products">
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
