@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require "includes/config.php";
   if(isset($_POST["submit-add"]))
   {
     if(isset($_SESSION["shopping-cart"]))
@@ -93,7 +94,7 @@
               $sum = 0;
               foreach($_SESSION["shopping-cart"] as $item)
               {
-                $sql = "SELECT name, price FROM Products WHERE ProductID = ". $item['ProductID'] . ";";
+                $sql = "SELECT * FROM Products WHERE ProductID=". $item['ProductID'] . ";";
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 if($resultCheck > 0)
