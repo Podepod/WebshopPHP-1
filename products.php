@@ -76,7 +76,7 @@
       echo('<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 400px; border-radius: 21px 21px 0 0;">');
       echo('<img src="images/products/' . $row['image_name'] . '" alt="Product image" style="max-width: 250px;">');
       echo('<form action="checkout.php" method="POST">
-            <input type="number" name="quantity" value="1" style="max-width: 100px;">
+            <input type="number" name="Quantity" value="1" style="max-width: 100px;">
             <input type="hidden" name="ProductID" value="' . $row['ProductID'] . '">
             <button name="submit-add">Toevoegen</button>
             </form>');

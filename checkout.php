@@ -4,34 +4,26 @@
   {
     if(isset($_SESSION["shopping-cart"]))
     {
-      $inList = 0;
-      $length = 0;
-      foreach($_SESSION["shopping-cart"] as &$item)
+      $amountOfItems = count($_SESSION["shopping-cart"]);
+      $itemInList = false;
+      for ($i=0; $i < $amountOfItems; $i++)
       {
-        if($item['ProductID'] == $_POST["ProductID"])
+        if(($_SESSION["shopping-cart"][$i]["ProductID"] == $_POST["ProductID"]) && !$itemInList)
         {
-          $item["amount"] += $_POST["quantity"];
-          $inList = 1;
-          continue;
+          $_SESSION["shopping-cart"][$i]["Quantity"] += $_POST["Quantity"];
+          $itemInList = true;
         }
-        $length++;
       }
-      if(!$inList)
+      if(!$itemInList)
       {
-        $item = array(
-          'ProductID' => $_POST['ProductID'],
-          'amount' => $_POST['quantity']
-        );
-        $_SESSION["shopping-cart"][$length+1] = $item;
+        $_SESSION["shopping-cart"][$amountOfItems] = array("ProductID" => $_POST["ProductID"], "Quantity" => $_POST['Quantity']);
       }
     }
     else
     {
-      $item = array(
-        'ProductID' => $_POST['ProductID'],
-        'amount' => $_POST['quantity']
+      $_SESSION['shopping-cart'] = array(
+        array("ProductID" => $_POST["ProductID"], "Quantity" => $_POST['Quantity'])
       );
-      $_SESSION["shopping-cart"][0] = $item;
     }
   }
 ?>
@@ -99,7 +91,7 @@
       <ul class="list-group mb-3">
             <?php
               $sum = 0;
-              foreach($_SESSION["shopping-cart"] as &$item)
+              foreach($_SESSION["shopping-cart"] as $item)
               {
                 $sql = "SELECT name, price FROM Products WHERE ProductID = ". $item['ProductID'] . ";";
                 $result = mysqli_query($conn, $sql);
@@ -110,9 +102,13 @@
                   $price = $row['price'];
                   echo('<li class="list-group-item d-flex justify-content-between lh-condensed"><div>');
                   echo(' <h6 class="my-0">' . $name . '</h6>');
-                  echo('<small class="text-muted">' . $item['amount'] . '</small></div>');
+                  echo('<small class="text-muted">' . $item['Quantity'] . '</small></div>');
                   echo('<span class="text-muted">€' . $price . '</span></li>');
-                  $sum += $price * $item['amount'];
+                  $sum += $price * $item['Quantity'];
+                }
+                else
+                {
+                  header("Location: checkout.php?error=sqlerror1");
                 }
               }
             ?>
