@@ -1,7 +1,7 @@
 <?php
     if(isset($_POST['submit-order']))
     {
-        require 'config.php';
+        require "config.php";
         if(isset($_SESSION['CustomerID']))
         {
             $CustomerID = $_SESSION['CustomerID'];
