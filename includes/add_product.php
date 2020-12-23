@@ -60,7 +60,7 @@
             }
             else
             {
-                header("Location: ../dashboard.php?error=FileTypeNotAllowed");
+                header("Location: ../dashboard.php?error=FileTypeNotAllowed:".$imgExt);
             }
         }
         else
