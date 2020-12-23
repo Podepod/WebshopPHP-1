@@ -5,7 +5,7 @@
         if(isset($_SESSION['CustomerID']))
         {
             $CustomerID = $_SESSION['CustomerID'];
-            $sql = "INSERT INTO Orders (CustomerID) VALUES (" . $_SESSION['CustomerID'] . ");";
+            $sql = "INSERT INTO Orders (CustomerID) VALUES (" . $CustomerID . ");";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql))
             {
@@ -14,7 +14,7 @@
             else
             {
                 mysqli_stmt_execute($stmt);
-                $sql = "SELECT OrderID FROM Orders WHERE CustomerID=" . $_SESSION['CustomerID'] . "ORDER BY OrderID DESC LIMIT 1;";
+                $sql = "SELECT OrderID FROM Orders WHERE CustomerID=" . $CustomerID . "ORDER BY OrderID DESC LIMIT 1;";
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql))
                 {
@@ -38,9 +38,9 @@
                     else
                     {
                         mysqli_stmt_execute($stmt);
-                        header("Location: ../betalen.php?success");
                     }
                 }
+                header("Location: ../betalen.php?success");
             }
         }
         else
