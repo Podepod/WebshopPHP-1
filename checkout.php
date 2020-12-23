@@ -99,11 +99,12 @@
                 $resultCheck = mysqli_num_rows($result);
                 if($resultCheck > 0)
                 {
+                  $row = mysqli_fetch_assoc($result);
                   $name = $row['name'];
                   $price = $row['price'];
                   echo('<li class="list-group-item d-flex justify-content-between lh-condensed"><div>');
                   echo(' <h6 class="my-0">' . $name . '</h6>');
-                  echo('<small class="text-muted">' . $item['Quantity'] . '</small></div>');
+                  echo('<small class="text-muted">' . $item['Quantity'] . 'X/small></div>');
                   echo('<span class="text-muted">€' . $price . '</span></li>');
                   $sum += $price * $item['Quantity'];
                 }
